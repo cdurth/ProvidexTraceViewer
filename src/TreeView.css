@@ -1,0 +1,134 @@
+/* TreeView.css */
+
+:root {
+    --light-background: #f6f8fa; 
+    --dark-background: #333;
+    --light-text: #111;
+    --dark-text: #DDD;
+    --line-color: #345eeb;
+  }
+  
+  body {
+    background-color: var(--light-background);  
+    color: var(--light-text);  
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+  
+  body.dark-mode {
+    background-color: var(--dark-background); 
+    color: var(--dark-text);  
+  }
+  
+  /* YOUR EXISTING CSS */
+  
+  .tree-view {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .tree-node {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .line-number {
+    user-select: none;
+    border-right: 1px solid #333;
+    font-size: 0.8em;
+    padding: 5px;
+    background-color: var(--light-background); 
+    color: var(--line-color);
+    min-width: 30px;
+    text-align: right;
+    transition: background-color 0.5s ease-in-out;
+  }
+
+  .line-number a,
+  .line-number a:visited {
+    /* remove the default underline from links */
+    text-decoration: none;
+    color: var(--line-color); /* Use the variable here */
+  }
+  
+  
+  body.dark-mode .line-number {
+    background-color: var(--dark-background);
+    border-right: 1px solid #ffffff;
+    color: var(--dark-text);
+  }
+
+  body.dark-mode .line-number a,
+  body.dark-mode .line-number a:visited {
+    color: var(--line-color); /* Use the variable here */
+  }
+
+
+  .line-number.empty {
+    border-right: none;
+    background-color: transparent;
+  }
+  
+  .editor-line {
+    background-color: var(--light-background); 
+    padding: 5px;
+    font-family: "Courier New", Courier, monospace;
+    transition: background-color 0.5s ease-in-out;
+  }
+  body.dark-mode .editor-line {
+    background-color: var(--dark-background);
+  }
+  
+  .tree-line-content {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+  
+  .tree-node > .tree-node {
+    padding-left: 30px;
+  }
+  
+  .expand-collapse-icon {
+    font-weight: bold;
+    font-size: 1.2rem;  /* Increase the size */
+    display: inline-block;
+    width: 15px;
+    color: #0095ff; /*Adjust the color to a more contrasting one in both dark and light modes */
+    cursor: pointer;
+  }
+  
+  body.dark-mode .expand-collapse-icon {
+    color: #80d4ff; /* Adjust color for dark mode */
+  }
+  
+  .tree-data-input {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    background-color: var(--light-background); 
+    transition: background-color 0.5s ease-in-out;
+    color: var(--light-text);
+  }
+  
+  body.dark-mode .tree-data-input {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+  }
+  
+  .token-keyword {
+    color: #d92631;
+  }
+  
+  .token-bracket { color: #d92631; }
+  
+  .token-method { color: #98e228;}
+  
+  .token-quoted { color:#e7db72}
+  
+  .token-label {color:#e79622}
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
